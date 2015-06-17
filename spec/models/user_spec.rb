@@ -23,11 +23,32 @@ describe User do
     end
   end
 
-  context "when positive account balance" do  
-    
-    it " debits " do
+  context "when positive account balance" do
 
+    let(:rich_user) { create(:user, :rich) }
+    it "debits " do
+      balance = rich_user.account_balance
+      expect(rich_user.debit("100.00")).to eq(balance - 100.00)
+    end
 
-    end  
-  end 
+    it "gets the right value from database " do
+      balance = rich_user.account_balance
+      expect(rich_user.debit("100.00")).to eq(balance - 100.00)
+      expect(User.last.account_balance.to_s).to eq((balance - 100.00).to_s)
+      expect(User.last).to eq rich_user
+    end
+
+    it "credits " do
+      balance = rich_user.account_balance
+      expect(rich_user.credit("100.00")).to eq(balance + 100.00)
+    end
+  end
+
+  context "when accout balance is 0" do
+    let(:user) { create(:user)}
+    it "not debits anything" do
+      expect(user.debit(10.00).to_s).to eq((0.0).to_s)
+      expect(user.debit(10.00)).to raise_error
+    end
+  end
 end
