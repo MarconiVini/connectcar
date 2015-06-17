@@ -1,0 +1,14 @@
+== README
+Bem vindo ao Connectcar
+
+Regras de negócio a serem Implementadas:
+User:
+  -O CPF do usuário precisa ser único.
+  -O usuário deve ter apenas um plano
+
+Plans:
+  -Criar os tipos basicos de planos ["básico", "autocarga", "fixo", "flex"]
+
+Device:
+  -Criar o device (que é um carro a principio)
+  
