@@ -22,4 +22,12 @@ describe User do
       expect(user_cpf.formated_cpf).not_to eq user_cpf.cpf
     end
   end
+
+  context "when positive account balance" do  
+    
+    it " debits " do
+
+
+    end  
+  end 
 end

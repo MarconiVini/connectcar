@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :cpf,  uniqueness: true
-
+  has_many :devices
   belongs_to :plan
 
   def formated_cpf
