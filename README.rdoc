@@ -7,8 +7,11 @@ User:
   -O usuário deve ter apenas um plano
 
 Plans:
-  -Criar os tipos basicos de planos ["básico", "autocarga", "fixo", "flex"]
+  -Criar os tipos basicos de planos
+  [
+    "fixo" Mensalidade de R$15.00, recarga livre
+    "flex" Mensalidade livre, 10% do valor cobrado para recarga
+  ]
 
 Device:
   -Criar o device (que é um carro a principio)
-  
