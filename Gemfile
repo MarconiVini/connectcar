@@ -45,6 +45,7 @@ group :test, :development do
   gem 'simplecov-rcov'
   gem 'timecop'
   gem 'vcr'
+  gem 'shoulda-matchers'
 end
 
 group :doc do

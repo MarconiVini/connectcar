@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   validates :cpf,  uniqueness: true
 
+  belongs_to :plan
+
   def formated_cpf
     self.cpf.gsub(/\A(\d{3})(\d{3})(\d{3})(\d{2})\Z/, "\\1.\\2.\\3-\\4")
   end
