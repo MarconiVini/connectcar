@@ -1,7 +1,6 @@
 require 'spec_helper'
 
-describe User do
-	
+describe User do	
   context "assign cpf" do 
     let(:user) { create(:user)}
     let(:user_duplicate) {build(:user, cpf: user.cpf)}
@@ -14,5 +13,4 @@ describe User do
       expect(user_duplicate.save).to_not be_truthy
     end
   end
-
 end
